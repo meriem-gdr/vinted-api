@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const cloudinary = require("cloudinary").v2;
-require('dotenv').config(); // Permet d'activer les variables d'environnement qui se trouvent dans le fichier `.env`
+require("dotenv").config(); // Permet d'activer les variables d'environnement qui se trouvent dans le fichier `.env`
 
 mongoose.connect(process.env.MONGODB_URI);
 
@@ -18,9 +18,9 @@ mongoose.connect("mongodb://localhost:27017/vinted");
 
 // initialisation de cloudinary
 cloudinary.config({
-  cloud_name: process.env.CLOUDINARY-CLOUDNAME,
-  api_key: process.env.CLOUDINARY-APIKEY,
-  api_secret: process.env.CLOUDINARY-SECRETAPI,
+  cloud_name: process.env.CLOUDINARY_CLOUDNAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_SECRET_API,
 });
 
 app.use(express.json());
